@@ -1,0 +1,3 @@
+docker-compose.prod.yml
+config/config.json
+config/config.prod.json

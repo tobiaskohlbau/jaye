@@ -1,0 +1,34 @@
+<div class="container">
+  <div *ngIf="videos"
+       fxLayout
+       ngClass="row"
+       matchHeight="card-title"
+       fxLayout.lt-md="column"
+       fxLayoutGap.lt-md="16px"
+       fxLayoutWrap.lt-md="none"
+       [ngClass.lt-md]="{'row':false}">
+    <!-- <div *ngFor="let video of videos | sort" -->
+    <div *ngFor="let video of videos"
+         fxFlex="0 0 25%"
+         ngClass="col"
+         [ngClass.lt-md]="{'col':false}">
+      <md-card>
+        <md-card-title class="card-title">{{video.title}}</md-card-title>
+        <img md-card-image
+             src="{{video.thumbnail}}"
+             alt="{{video.title}}"
+             class="thumbnail">
+        <md-card-actions>
+          <a md-button
+             class="jaye-button"
+             [href]="videoService.videoURL(video.id)"
+             download="{{video.title}}.mp4">Video</a>
+          <a md-button
+             class="jaye-button"
+             [href]="videoService.audioURL(video.id)"
+             download="{{video.title}}.mp3">Audio</a>
+        </md-card-actions>
+      </md-card>
+    </div>
+  </div>
+</div>

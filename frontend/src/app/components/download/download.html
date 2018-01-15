@@ -1,0 +1,30 @@
+<md-card>
+  <md-card-title>
+    Download Settings
+  </md-card-title>
+  <md-card-content>
+    <md-input-container>
+      <input mdInput
+             placeholder="YouTube Video"
+             [formControl]="searchForm">
+    </md-input-container>
+    <md-radio-group [(ngModel)]="selectedVideo"
+                    name="id">
+      <md-list>
+        <md-list-item *ngFor="let v of videos; let isFirst = first">
+          <md-radio-button [value]="v.id"
+                           [checked]="isFirst">
+          </md-radio-button>
+          <img md-list-avatar
+               [src]="v.thumbnail"
+               alt="YT">
+          <h3 md-line> {{v.title}} </h3>
+        </md-list-item>
+      </md-list>
+    </md-radio-group>
+    <md-card-actions align="end">
+      <button md-fab
+              (click)="download(selectedVideo)"><md-icon>check</md-icon></button>
+    </md-card-actions>
+  </md-card-content>
+</md-card>

@@ -1,0 +1,11 @@
+{
+    "server": {
+        "host": "0.0.0.0",
+        "port": "8080"
+    },
+    "youtube": {
+        "url": "https://www.googleapis.com/youtube/v3",
+        "token": "INSERT_GENERATED_TOKEN"
+        "video_path": "./videos/yt"
+    }
+}
